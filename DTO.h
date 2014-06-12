@@ -17,6 +17,7 @@ public:
 	int GetDay();
 	int GetYear();
 	~DueDate();
+	char* toBytes();
 private:
 	int month;
 	int day;
@@ -31,6 +32,7 @@ public:
 	Patron(string,string, bool);
 	vector<int> GetBookList(int);
         void AssignPatronId();
+        char* toBytes;
 	~Patron();
 private:
     bool idAssigned;
@@ -42,23 +44,21 @@ private:
 	int age;
 };
 
-#include <string>
-
-using namespace std;
 
 // This class models a Book. It contains key information
 // about a book and methods to manage that data
-class Book
+class Media
 {
 	public:
-		Book(string, string);
+		Media(string, string);
 		string GetAuthor(); // What should I pass here? bookID? or title?
 		string GetTitle(); // What should I pass here? bookID?
 		bool GetCheckedInStatus(); // What should I pass here? bookID? Title?
 		void CheckIn(); // Should there be a value passed here? bookID? Title?
 		void CheckOut(); // Should there be a value passed here? bookID? Title?
 		void AssignId(int);
-		~Book();
+		char* ToBytes();
+		~Media();
 		// Do we want SetBookID() if we plan on adding books, movies, etc.? 
 		// maybe, just below the iceburg line
 	private:

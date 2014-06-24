@@ -134,6 +134,7 @@ void Patron::AssignPatronId(int id)
 	}
 }
 
+
 Patron Patron::ReadPatron(istream& is){
 	PatronRec inputRec;
 	is.read(reinterpret_cast<char*>(&inputRec), sizeof(inputRec));
@@ -148,7 +149,6 @@ Patron Patron::ReadPatron(istream& is){
 
 	return user;	
 }
-
 
 void Patron::SavePatron(ostream& os){
 	if (!os)
@@ -203,6 +203,8 @@ string Patron::displayPatronInfo(){
 	string display=to_string(patronID)+": "+patronFirstName+" "+patronLastName+"\n";
 	return display;
 }
+
+
 // The Patron Destructor
 // Purpose: To delete a patron
 // Parameters: None
@@ -299,6 +301,7 @@ void Media::AssignId(int id)
 		throw runtime_error("can't reassign book's id");
 }
 
+
 // The Book destructor
 // Purpose: To destroy a book
 // Parameters: None
@@ -372,3 +375,4 @@ bool Media::isChildrenBook(){
 	else
 		return false;
 }
+
